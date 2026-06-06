@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio Personal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #10294a;
+            background-color: #eaf1ff;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #002e70 0%, #0050a0 100%);
+            color: white;
+            padding: 2.5rem 1rem;
+            text-align: center;
+            box-shadow: inset 0 -4px 14px rgba(0, 0, 0, 0.15);
+        }
+        
+        header h1 {
+            font-size: 2.6rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+        
+        nav {
+            background-color: #00254d;
+            padding: 0.9rem 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px solid #ffd700;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #ffd700;
+        }
+        
+        section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1.75rem;
+            border-bottom: 4px solid #003399;
+            padding-bottom: 0.75rem;
+            color: #00294a;
+        }
+        
+        .personal-section {
+            background-color: #ffffff;
+            border: 1px solid rgba(0, 82, 160, 0.15);
+            border-radius: 14px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.05);
+        }
+        
+        .bio-container {
+            display: grid;
+            grid-template-columns: 1.3fr 0.9fr;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .bio-text h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #003399;
+        }
+        
+        .bio-text p {
+            margin-bottom: 1rem;
+            color: #2d3e5b;
+        }
+        
+        .bio-image {
+            text-align: center;
+            padding: 1rem;
+            background: linear-gradient(180deg, #f2f7ff 0%, #d9e7ff 100%);
+            border-radius: 18px;
+            box-shadow: 0 10px 20px rgba(0, 42, 102, 0.1);
+        }
+        
+        .bio-image img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 6px solid #ffd700;
+            object-fit: cover;
+            display: inline-block;
+        }
+        
+        .image-caption {
+            margin-top: 1rem;
+            font-weight: 700;
+            color: #003399;
+        }
+        
+        .professional-section {
+            background-color: white;
+        }
+        
+        .cv-section {
+            margin-bottom: 2rem;
+        }
+        
+        .cv-section h3 {
+            color: #003399;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .experience-item, .education-item, .skill-item {
+            background-color: #eaf1ff;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-left: 5px solid #003399;
+            border-radius: 12px;
+        }
+        
+        .experience-item h4, .education-item h4 {
+            color: #00294a;
+            margin-bottom: 0.5rem;
+        }
+        
+        .date {
+            color: #506b94;
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+        
+        .description {
+            margin-top: 0.5rem;
+            color: #3a4f72;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+        }
+        
+        .skill-item {
+            text-align: center;
+            background-color: #d7e8ff;
+        }
+        
+        .skill-item h4 {
+            color: #00294a;
+            margin-bottom: 0.5rem;
+        }
+        
+        .skill-item p {
+            color: #1e3358;
+        }
+        
+        footer {
+            background-color: #00254d;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 2rem;
+        }
+        
+        footer a {
+            color: #ffd700;
+        }
+        
+        @media (max-width: 768px) {
+            .bio-container {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 0.75rem;
+                align-items: center;
+            }
+            
+            nav a {
+                display: inline-block;
+                padding: 0.35rem 0.75rem;
+                border-radius: 999px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mi Portafolio Personal</h1>
+        <p>Una presentación tranquila y honesta de mi trabajo y mi forma de ser.</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#personal">Personal</a></li>
+            <li><a href="#profesional">Profesional</a></li>
+            <li><a href="#experiencia">Experiencia</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+    
+    <!-- SECCIÓN PERSONAL -->
+    <section id="personal" class="personal-section">
+        <h2 class="section-title">Acerca de Mí</h2>
+        <div class="bio-container">
+            <div class="bio-text">
+                <h2>Hola, soy [Tu Nombre]</h2>
+                <p>Me muevo con calma y prefiero escuchar antes de hablar. Valoro el detalle, el trabajo silencioso y un entorno profesional sereno.</p>
+                <p>Disfruto de proyectos que requieren concentración y constancia, y en mi tiempo libre me gusta leer, escribir ideas y pasear tranquilamente.</p>
+                <p>Prefiero un perfil bajo, donde los resultados hablan por sí mismos y el esfuerzo se muestra en el trabajo bien hecho.</p>
+            </div>
+            <div class="bio-image">
+                <img src="assets/img/profile.jpg" alt="Foto personal">
+                <p class="image-caption">Foto personal</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- SECCIÓN PROFESIONAL / CV -->
+    <section id="profesional" class="professional-section">
+        <h2 class="section-title">Mi Perfil Profesional</h2>
+        <p>Soy un profesional metódico con experiencia en [área de especialidad]. Me especializo en [especialización 1] y [especialización 2], aportando discreción, constancia y resultados sólidos.</p>
+    </section>
+    
+    <!-- EXPERIENCIA LABORAL -->
+    <section id="experiencia" class="professional-section">
+        <h2 class="section-title">Experiencia Laboral</h2>
+        
+        <div class="cv-section">
+            <h3>Experiencia</h3>
+            
+            <div class="experience-item">
+                <h4>Puesto: [Tu Cargo Actual]</h4>
+                <p class="date">Empresa: [Nombre Empresa] | [Mes/Año] - Presente</p>
+                <p class="description">
+                    Descripción de tus responsabilidades principales:
+                    • Responsabilidad 1
+                    • Responsabilidad 2
+                    • Logro importante
+                </p>
+            </div>
+            
+            <div class="experience-item">
+                <h4>Puesto: [Cargo Anterior]</h4>
+                <p class="date">Empresa: [Nombre Empresa] | [Mes/Año] - [Mes/Año]</p>
+                <p class="description">
+                    Descripción de tus responsabilidades:
+                    • Responsabilidad 1
+                    • Responsabilidad 2
+                    • Logro importante
+                </p>
+            </div>
+        </div>
+        
+        <!-- EDUCACIÓN -->
+        <div class="cv-section">
+            <h3>Educación</h3>
+            
+            <div class="education-item">
+                <h4>Grado/Licenciatura: [Tu Título]</h4>
+                <p class="date">Universidad: [Nombre Universidad] | [Año Graduación]</p>
+                <p class="description">Especialización o información adicional sobre tu formación académica.</p>
+            </div>
+            
+            <div class="education-item">
+                <h4>Curso/Certificado: [Nombre Certificación]</h4>
+                <p class="date">Institución: [Nombre] | [Año]</p>
+                <p class="description">Descripción breve del certificado o curso realizado.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- HABILIDADES -->
+    <section id="habilidades" class="professional-section">
+        <h2 class="section-title">Habilidades Profesionales</h2>
+        
+        <div class="skills-container">
+            <div class="skill-item">
+                <h4>Habilidad 1</h4>
+                <p>Experto</p>
+            </div>
+            <div class="skill-item">
+                <h4>Habilidad 2</h4>
+                <p>Avanzado</p>
+            </div>
+            <div class="skill-item">
+                <h4>Habilidad 3</h4>
+                <p>Intermedio</p>
+            </div>
+            <div class="skill-item">
+                <h4>Habilidad 4</h4>
+                <p>Experto</p>
+            </div>
+            <div class="skill-item">
+                <h4>Habilidad 5</h4>
+                <p>Avanzado</p>
+            </div>
+            <div class="skill-item">
+                <h4>Habilidad 6</h4>
+                <p>Intermedio</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CONTACTO -->
+    <section id="contacto" class="personal-section">
+        <h2 class="section-title">Ponte en Contacto</h2>
+        <p>Me gustaría saber de ti. Puedes contactarme a través de:</p>
+        <ul style="margin: 1rem 0 0 2rem;">
+            <li>Email: <strong>tu.email@ejemplo.com</strong></li>
+            <li>Teléfono: <strong>+34 XXX XXX XXX</strong></li>
+            <li>LinkedIn: <strong><a href="#">Tu Perfil LinkedIn</a></strong></li>
+            <li>GitHub: <strong><a href="#">Tu Perfil GitHub</a></strong></li>
+        </ul>
+    </section>
+    
+    <footer>
+        <p>&copy; 2024 [Tu Nombre]. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
